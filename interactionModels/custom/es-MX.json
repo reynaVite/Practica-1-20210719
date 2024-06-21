@@ -1,0 +1,147 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "slots": [],
+          "name": "HelloWorldIntent",
+          "samples": [
+            "hola",
+            "como estás",
+            "di hola mundo",
+            "di hola",
+            "hola mundo"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "slots": [
+            {
+              "name": "uno",
+              "type": "AMAZON.NUMBER"
+            },
+            {
+              "name": "dos",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "name": "MultiplicacionIntent",
+          "samples": [
+            "multiplicacion {uno} y {dos} ",
+            "{uno} por {dos}",
+            "respuesta de {uno} por {dos}",
+            "cuanto es la multiplicacion de {uno} por {dos}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "uno",
+              "type": "AMAZON.NUMBER"
+            },
+            {
+              "name": "dos",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "name": "SumaIntent",
+          "samples": [
+            "suma {uno} mas {dos}",
+            "suma {uno} y {dos}",
+            "{uno} y {dos}",
+            "cuanto es {uno} mas {dos}",
+            "{uno} mas {dos}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "uno",
+              "type": "AMAZON.NUMBER"
+            },
+            {
+              "name": "dos",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "name": "RestaIntent",
+          "samples": [
+            "cuanto es {uno} menos {dos}",
+            "{uno} menos {dos}",
+            "resta {uno} y {dos}",
+            "resta {uno} menos {dos}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "uno",
+              "type": "AMAZON.NUMBER"
+            },
+            {
+              "name": "dos",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "name": "DivisionIntent",
+          "samples": [
+            "division {uno} entre {dos}",
+            "division {uno} y {dos}",
+            "{uno} y {dos}",
+            "cuanto es {uno} entre {dos}",
+            "{uno} entre {dos}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "uno",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "name": "LogaritmoIntent",
+          "samples": [
+            "logaritmo natural de {uno}",
+            "cuál es el logaritmo natural de {uno}",
+            "calcula el logaritmo natural de  {uno}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "base",
+              "type": "AMAZON.NUMBER"
+            },
+            {
+              "name": "exponente",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "name": "PotenciaIntent",
+          "samples": [
+            "potencia de {base} a {exponente}",
+            "cuál es {base} elevado a {exponente}",
+            "calcula {base} a la potencia de {exponente}"
+          ]
+        }
+      ],
+      "types": [],
+      "invocationName": "calculadora uthh"
+    }
+  }
+}
