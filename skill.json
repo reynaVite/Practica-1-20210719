@@ -5,16 +5,16 @@
         "es-MX": {
           "summary": "calculadora básica",
           "examplePhrases": [
-            "Alexa, Abre calculadora uthh",
-            "Alexa, di hola calculadora uthh",
-            "Alexa, hola calculadora uthh"
+            "Alexa, Abre calculadora angy",
+            "Alexa, di hola calculadora angy",
+            "Alexa, ayuda calculadora angy"
           ],
           "keywords": [
             "calculadora",
-            "uthh",
+            "angy",
             "hola"
           ],
-          "name": "calculadora uthh",
+          "name": "calculadora angy",
           "description": "esta es la práctica académica de crear un skill de una calculadora",
           "smallIconUri": "file://assets/images/es-MX_smallIconUri.png",
           "updatesDescription": "Es una skill clásica de inicio de programación",
@@ -63,8 +63,8 @@
       "allowsPurchases": false,
       "locales": {
         "es-MX": {
-          "termsOfUseUrl": "https://uthh.edu.mx/content/avisoprivacidad.html",
-          "privacyPolicyUrl": "https://uthh.edu.mx/content/avisoprivacidad.html"
+          "termsOfUseUrl": "https://eduzona.com.mx/Terminos",
+          "privacyPolicyUrl": "https://eduzona.com.mx/Terminos"
         }
       },
       "containsAds": false,
