@@ -42,10 +42,11 @@
           ],
           "name": "MultiplicacionIntent",
           "samples": [
-            "multiplicacion {uno} y {dos} ",
+            "cuanto es la multiplicación de {uno} por {dos}",
+            "producto de {uno} y {dos}",
+            "multiplica {uno} y {dos} ",
             "{uno} por {dos}",
-            "respuesta de {uno} por {dos}",
-            "cuanto es la multiplicacion de {uno} por {dos}"
+            "respuesta de {uno} por {dos}"
           ]
         },
         {
@@ -61,9 +62,9 @@
           ],
           "name": "SumaIntent",
           "samples": [
+            "agrega {uno} a {dos}",
             "suma {uno} mas {dos}",
             "suma {uno} y {dos}",
-            "{uno} y {dos}",
             "cuanto es {uno} mas {dos}",
             "{uno} mas {dos}"
           ]
@@ -81,6 +82,7 @@
           ],
           "name": "RestaIntent",
           "samples": [
+            "diferencia entre {uno} menos {dos}",
             "cuanto es {uno} menos {dos}",
             "{uno} menos {dos}",
             "resta {uno} y {dos}",
@@ -100,25 +102,10 @@
           ],
           "name": "DivisionIntent",
           "samples": [
-            "division {uno} entre {dos}",
-            "division {uno} y {dos}",
-            "{uno} y {dos}",
+            "Cuánto es {uno} dividido por {dos}",
+            "divide {uno} y {dos}",
             "cuanto es {uno} entre {dos}",
             "{uno} entre {dos}"
-          ]
-        },
-        {
-          "slots": [
-            {
-              "name": "uno",
-              "type": "AMAZON.NUMBER"
-            }
-          ],
-          "name": "LogaritmoIntent",
-          "samples": [
-            "logaritmo natural de {uno}",
-            "cuál es el logaritmo natural de {uno}",
-            "calcula el logaritmo natural de  {uno}"
           ]
         },
         {
@@ -138,10 +125,28 @@
             "cuál es {base} elevado a {exponente}",
             "calcula {base} a la potencia de {exponente}"
           ]
+        },
+        {
+          "slots": [
+            {
+              "name": "numero",
+              "type": "AMAZON.NUMBER"
+            },
+            {
+              "name": "porcentaje",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "name": "PorcentajeIntent",
+          "samples": [
+            "Dame el {porcentaje} de {numero}",
+            "Calcula el {porcentaje} por ciento de {numero}",
+            "calcular {numero} por ciento de {porcentaje}"
+          ]
         }
       ],
       "types": [],
-      "invocationName": "calculadora uthh"
+      "invocationName": "calculadora angy"
     }
   }
 }
