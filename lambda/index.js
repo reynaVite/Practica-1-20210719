@@ -131,63 +131,6 @@ const DivisionIntentHandler = {
 };
 
 
-const LogaritmoIntentHandler = {
-    canHandle(handlerInput) {
-        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
-            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'LogaritmoIntent';
-    },
-    handle(handlerInput) {
-        const numero = handlerInput.requestEnvelope.request.intent.slots.numero.value;
-        const numeroNumero = Number(numero);
-
-        if (isNaN(numeroNumero)) {
-            return handlerInput.responseBuilder
-                .speak('Lo siento, no pude entender el número. Por favor, inténtalo de nuevo.')
-                .reprompt('Dime un número para calcular el logaritmo natural.')
-                .getResponse();
-        }
-
-        if (numeroNumero <= 0) {
-            return handlerInput.responseBuilder
-                .speak('El logaritmo natural solo está definido para números mayores que cero.')
-                .reprompt('Dime un número mayor que cero para calcular el logaritmo natural.')
-                .getResponse();
-        }
-
-        const resultado = Math.log(numeroNumero);
-        const speakOutput = `UTHH dice, el logaritmo natural de ${numeroNumero} es aproximadamente ${resultado.toFixed(2)}.`;
-        return handlerInput.responseBuilder
-            .speak(speakOutput)
-            .getResponse();
-    }
-};
-
-const PotenciaIntentHandler = {
-    canHandle(handlerInput) {
-        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
-            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'PotenciaIntent';
-    },
-    handle(handlerInput) {
-        const base = handlerInput.requestEnvelope.request.intent.slots.base.value;
-        const exponente = handlerInput.requestEnvelope.request.intent.slots.exponente.value;
-        const baseNumero = Number(base);
-        const exponenteNumero = Number(exponente);
-
-        if (isNaN(baseNumero) || isNaN(exponenteNumero)) {
-            return handlerInput.responseBuilder
-                .speak('Lo siento, no pude entender los números. Por favor, inténtalo de nuevo.')
-                .reprompt('Dime la base y el exponente para calcular la potencia.')
-                .getResponse();
-        }
-
-        const resultado = Math.pow(baseNumero, exponenteNumero);
-        const speakOutput = `UTHH dice, ${baseNumero} elevado a la potencia de ${exponenteNumero} es igual a ${resultado}.`;
-        return handlerInput.responseBuilder
-            .speak(speakOutput)
-            .getResponse();
-    }
-};
-
 const PorcentajeIntentHandler = {
     canHandle(handlerInput) {
         return (
@@ -215,13 +158,43 @@ const PorcentajeIntentHandler = {
         const resultado = (numero * porcentajeNum) / 100;
 
         // Construir la respuesta hablada
-        const speakOutput = UTHH dice, ${porcentajeNum}% de ${numero} es igual a ${resultado}.;
+        const speakOutput = `UTHH dice, ${porcentajeNum}% de ${numero} es igual a ${resultado}.`;
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
             .getResponse();
     }
 };
+
+
+
+const PotenciaIntentHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'PotenciaIntent';
+    },
+    handle(handlerInput) {
+        const base = handlerInput.requestEnvelope.request.intent.slots.base.value;
+        const exponente = handlerInput.requestEnvelope.request.intent.slots.exponente.value;
+        const baseNumero = Number(base);
+        const exponenteNumero = Number(exponente);
+
+        if (isNaN(baseNumero) || isNaN(exponenteNumero)) {
+            return handlerInput.responseBuilder
+                .speak('Lo siento, no pude entender los números. Por favor, inténtalo de nuevo.')
+                .reprompt('Dime la base y el exponente para calcular la potencia.')
+                .getResponse();
+        }
+
+        const resultado = Math.pow(baseNumero, exponenteNumero);
+        const speakOutput = `UTHH dice, ${baseNumero} elevado a la potencia de ${exponenteNumero} es igual a ${resultado}.`;
+        return handlerInput.responseBuilder
+            .speak(speakOutput)
+            .getResponse();
+    }
+};
+
+
 const HelpIntentHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
@@ -337,7 +310,7 @@ exports.handler = Alexa.SkillBuilders.custom()
         RestaIntentHandler,
         MultiplicacionIntentHandler,
         DivisionIntentHandler,
-        LogaritmoIntentHandler,
+        PorcentajeIntentHandler,
         PotenciaIntentHandler,
         
         HelpIntentHandler,
@@ -349,9 +322,3 @@ exports.handler = Alexa.SkillBuilders.custom()
         ErrorHandler)
     .withCustomUserAgent('sample/hello-world/v1.2')
     .lambda();
-    
-    
-     
- 
- 
-
